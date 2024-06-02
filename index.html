@@ -60,7 +60,178 @@
                 max-width: 100%;
             }
         }
+
+        /* Styles for info section */
+        .info-header-left {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+        .info-header-left small {
+            color: red;
+            font-size: 14px;
+        }
+        .info-header-left h1 {
+            font-size: 36px;
+            color: black;
+        }
+        .info-header-right {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 14px;
+        }
+        .info-image-container {
+            position: relative;
+            margin-bottom: 20px;
+        }
+        .info-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: red;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+        .info-overlay p {
+            margin: 0;
+        }
+        .info-overlay button {
+            background-color: grey;
+            color: red;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        .info-image-container:hover .info-overlay {
+            opacity: 1;
+        }
+        .info-image {
+            width: 100%;
+            height: 400px; 
+            object-fit: cover;
+        }
+        .info-dots-container {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+        }
+        .info-dot {
+            height: 10px;
+            width: 10px;
+            margin: 0 5px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.3s ease-in-out;
+        }
+        .info-dot.active {
+            background-color: red;
+        }
+
+        /* Styles for best section */
+        .best-header-center {
+            text-align: center;
+            margin-top: 50px;
+        }
+        .best-header-center small {
+            color: red;
+            font-size: 14px;
+        }
+        .best-header-center h1 {
+            font-size: 36px;
+            color: black;
+            margin-top: 10px;
+        }
+        .best-content-container {
+            display: flex;
+            margin-top: 50px;
+        }
+        .best-content-left {
+            flex: 1;
+            padding: 20px;
+        }
+        .best-content-left img {
+            width: 100%;
+            height: auto;
+            display: none;
+        }
+        .best-content-left img.active {
+            display: block;
+        }
+        .best-content-right {
+            flex: 1;
+            padding: 20px;
+        }
+        .best-content-right ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .best-content-right ul li {
+            margin-bottom: 20px;
+            cursor: pointer;
+            color: black;
+            padding: 10px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .best-content-right ul li:hover {
+            text-decoration: underline;
+        }
+        .best-content-right ul li.active {
+            background-color: red;
+            color: white;
+        }
+
+        /* Styles for growth section */
+        .growth-header-center {
+            text-align: center;
+            margin-top: 50px;
+        }
+        .growth-header-center small {
+            color: red;
+            font-size: 14px;
+        }
+        .growth-header-center h1 {
+            font-size: 36px;
+            color: black;
+            margin-top: 10px;
+        }
+        .growth-cards-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+        }
+        .growth-card {
+            width: 200px;
+            margin: 0 15px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            text-align: center;
+            background-color: #f8f8f8;
+        }
+        .growth-card i {
+            font-size: 24px;
+            color: red;
+            margin-bottom: 10px;
+        }
+        .growth-card h2 {
+            font-size: 24px;
+            margin: 10px 0;
+        }
+        .growth-card p {
+            font-size: 14px;
+            color: gray;
+        }
     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
     <!-- Main Section -->
@@ -82,9 +253,101 @@
         </section>
     </section>
 
+   
+      
+    <!-- Best Section -->
+    <section id="best" class="s-content">
+        <div class="container">
+            <div class="best-header-center">
+                <small>OUR PROJECT</small>
+                <h1>WHY WE ARE BEST</h1>
+            </div>
+            <div class="best-content-container">
+                <div class="best-content-left">
+                    <img src="w1.png" id="best-image1" class="active" alt="Japan's Hot">
+                    <img src="B.png" id="best-image2" alt="Better Strategy and Quality">
+                    <img src="w4.png" id="best-image3" alt="Related Info">
+                </div>
+                <div class="best-content-right">
+                    <ul>
+                        <li id="best-content1" class="active" onclick="showImage('best-image1', 'best-content1')">Japan's Hot</li>
+                        <li id="best-content2" onclick="showImage('best-image2', 'best-content2')">Better Strategy and Quality</li>
+                        <li id="best-content3" onclick="showImage('best-image3', 'best-content3')">Related Info</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Growth Section -->
+    <section id="growth" class="s-content">
+        <div class="container">
+            <div class="growth-header-center">
+                <small>EXPERTS GROWTHS</small>
+                <h1>OUR COMPANY GROWTH</h1>
+            </div>
+            <div class="growth-cards-container">
+                <div class="growth-card">
+                    <i class="fas fa-heart"></i>
+                    <h2>199+</h2>
+                    <p>Satisfied Customers</p>
+                </div>
+                <div class="growth-card">
+                    <i class="fas fa-clock"></i>
+                    <h2>1591+</h2>
+                    <p>Days of Operation</p>
+                </div>
+                <div class="growth-card">
+                    <i class="fas fa-check-circle"></i>
+                    <h2>283+</h2>
+                    <p>Complete Projects</p>
+                </div>
+                <div class="growth-card">
+                    <i class="fas fa-trophy"></i>
+                    <h2>75+</h2>
+                    <p>Won Awards</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <script src="js/jquery.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/scripts.js"></script>
+    <script>
+        function showImage(imageId, contentId) {
+            
+            const images = document.querySelectorAll('.best-content-left img');
+            images.forEach(image => {
+                image.classList.remove('active');
+            });
+
+            const selectedImage = document.getElementById(imageId);
+            selectedImage.classList.add('active');
+
+            
+            const contentItems = document.querySelectorAll('.best-content-right ul li');
+            contentItems.forEach(item => {
+                item.classList.remove('active');
+                item.style.color = 'black';
+            });
+
+            
+            const selectedItem = document.getElementById(contentId);
+            selectedItem.classList.add('active');
+            selectedItem.style.color = 'white';
+        }
+
+        const dots = document.querySelectorAll('.info-dot');
+        const images = document.querySelectorAll('.info-image-container');
+
+        images.forEach((image, index) => {
+            image.addEventListener('mouseenter', () => {
+                dots.forEach(dot => dot.classList.remove('active'));
+                dots[index].classList.add('active');
+            });
+        });
+    </script>
 </body>
 </html>
