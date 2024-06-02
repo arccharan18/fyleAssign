@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Project</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .header-center {
+            text-align: center;
+            margin-top: 50px;
+        }
+        .header-center small {
+            color: red;
+            font-size: 14px;
+        }
+        .header-center h1 {
+            font-size: 36px;
+            color: black;
+            margin-top: 10px;
+        }
+        .content-container {
+            display: flex;
+            margin-top: 50px;
+        }
+        .content-left {
+            flex: 1;
+            padding: 20px;
+        }
+        .content-left img {
+            width: 100%;
+            height: auto;
+            display: none;
+        }
+        .content-left img.active {
+            display: block;
+        }
+        .content-right {
+            flex: 1;
+            padding: 20px;
+        }
+        .content-right ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .content-right ul li {
+            margin-bottom: 20px;
+            cursor: pointer;
+            color: black;
+            padding: 10px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .content-right ul li:hover {
+            text-decoration: underline;
+        }
+        .content-right ul li.active {
+            background-color: red;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header-center">
+            <small>OUR PROJECT</small>
+            <h1>WHY WE ARE BEST</h1>
+        </div>
+        <div class="content-container">
+            <div class="content-left">
+                <img src="w1.png" id="image1" class="active" alt="Japan's Hot">
+                <img src="B.png" id="image2" alt="Better Strategy and Quality">
+                <img src="w4.png" id="image3" alt="Related Info">
+            </div>
+            <div class="content-right">
+                <ul>
+                    <li id="content1" class="active" onclick="showImage('image1', 'content1')">Japan's Hot</li>
+                    <li id="content2" onclick="showImage('image2', 'content2')">Better Strategy and Quality</li>
+                    <li id="content3" onclick="showImage('image3', 'content3')">Related Info</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showImage(imageId, contentId) {
+            // Hide all images
+            const images = document.querySelectorAll('.content-left img');
+            images.forEach(image => {
+                image.classList.remove('active');
+            });
+
+            // Show the selected image
+            const selectedImage = document.getElementById(imageId);
+            selectedImage.classList.add('active');
+
+            // Reset all content items
+            const contentItems = document.querySelectorAll('.content-right ul li');
+            contentItems.forEach(item => {
+                item.classList.remove('active');
+                item.style.color = 'black';
+            });
+
+            // Highlight the selected content item
+            const selectedItem = document.getElementById(contentId);
+            selectedItem.classList.add('active');
+            selectedItem.style.color = 'white';
+        }
+    </script>
+</body>
+</html>

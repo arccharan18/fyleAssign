@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Marketing Agency</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .s-content {
+            padding: 40px 0;
+        }
+        .s-intro {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            background-color: #f8f8f8;
+        }
+        .s-intro__content-text {
+            max-width: 50%;
+        }
+        .s-intro__content-pretitle {
+            color: red; 
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        .s-intro__content-title {
+            font-size: 2.5em;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+        .s-intro__content-media {
+            max-width: 45%;
+        }
+        .s-intro__content-media img {
+            max-width: 100%;
+            height: auto;
+        }
+        .btn-pink {
+            background-color: red;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            text-transform: uppercase;
+            cursor: pointer;
+            text-decoration: none; 
+            display: inline-block; 
+        }
+        .btn-pink:hover {
+            background-color: #ff1493;
+        }
+        @media (max-width: 768px) {
+            .s-intro {
+                flex-direction: column;
+                text-align: center;
+            }
+            .s-intro__content-text,
+            .s-intro__content-media {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Main Section -->
+    <section id="content" class="s-content">
+        <section id="intro" class="s-intro">
+            <div class="s-intro__content-text">
+                <div class="s-intro__content-pretitle text-pretitle">AWARD WINNING</div>
+                <h1 class="s-intro__content-title">
+                    DIGITAL MARKETING AGENCY
+                </h1>
+                <p class="smallest-text">This is the Prototype which I have Built</p>
+                <a href="contact.html" class="btn btn-pink">CONTACT US</a>
+            </div>
+            <div class="s-intro__content-media">
+                <div class="s-intro__content-media-inner">
+                    <img src="Assign.png" alt="Marketing Image">
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
+</body>
+</html>
